@@ -49,13 +49,13 @@
 pipeline {
   agent any
   environment {
-    URL = "google.com"
+    URL1 = "google.com"
   }
   stages {
     stage('ONE') {
       steps {
-        sh 'echo ${URL}'
-        echo URL
+        sh 'echo ${URL1}'
+        echo URL1
       }
     }
   }
