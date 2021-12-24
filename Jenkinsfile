@@ -59,6 +59,7 @@ pipeline {
         sh 'echo ${URL1}'
         sh 'env'
         echo SSH
+        sh 'echo ${SSH1} | base64'
       }
     }
   }
