@@ -51,7 +51,7 @@ pipeline {
   environment {
     URL1 = "google.com"
     SSH = credentials("CENTOS")
-    SSH1 = credentials("common/ssh")
+    SSH1 = credentials("new")
   }
   stages {
     stage('ONE') {
