@@ -33,6 +33,7 @@
 
 pipeline {
   agent any
+  options { disableConcurrentBuilds() }
   stages {
     stage('ONE') {
       steps {
