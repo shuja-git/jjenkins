@@ -105,7 +105,9 @@
 // tools example
 
 pipeline {
-  agent any
+  agent {
+    label 'WORKSTATION'
+  }
   tools {
     maven 'maven-3.8.4'
   }
