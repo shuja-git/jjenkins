@@ -60,7 +60,7 @@ pipelineJob('CI-Pipelines/cart') {
           }
         }
       }
-      'scriptPath'('Jenkins's')
+      'scriptPath'('Jenkinsfile')
       'lightweight'(true)
     }
   }
