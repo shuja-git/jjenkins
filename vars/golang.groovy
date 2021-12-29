@@ -22,6 +22,12 @@ def call() {
         }
       }
 
+      stage('Lint Checks') {
+        steps {
+          sh 'echo Test Cases'
+        }
+      }
+
       stage('Test Cases') {
         steps {
           sh 'echo Test Cases'
