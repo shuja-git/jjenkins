@@ -50,8 +50,8 @@ def COMPONENTS = ["cart", "catalogue"]
 def SIZE =  COMPONENTS.size -1
 
 for(i in 0..SIZE) {
-  pipelineJob("CI-Pipelines/${COMPONENTS[${i}]}") {
-    def j = COMPONENTS[i]
+  def j = COMPONENTS[i]
+  pipelineJob("CI-Pipelines/${j}") {
     configure { flowdefinition ->
       flowdefinition << delegate.'definition'(class: 'org.jenkinsci.plugins.workflow.cps.CpsScmFlowDefinition', plugin: 'workflow-cps') {
         'scm'(class: 'hudson.plugins.git.GitSCM', plugin: 'git') {
