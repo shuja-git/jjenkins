@@ -12,7 +12,7 @@ def call() {
 
       stage('Compile the Code') {
         steps {
-          sh 'Compile the Code'
+          sh 'echo Compile the Code'
         }
       }
 
