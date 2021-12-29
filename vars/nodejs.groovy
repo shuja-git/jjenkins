@@ -8,7 +8,7 @@ def call(){
 
       stage('compile the code') {
         steps {
-          sh 'echo compile the code'
+          sh 'echo compile the ${COMPONENT} code'
 
         }
       }
