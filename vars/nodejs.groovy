@@ -1,7 +1,32 @@
-def info(message) {
-  echo "INFO: ${message}"
-}
+pipeline {
+  agent {
+    label 'WORKSTATION'
+  }
 
-def warning(message) {
-  echo "WARNING: ${message}"
+  triggers {
+    pollSCM('*/2 * * * *')
+  }
+
+  stages {
+
+    stage('Compile the Code') {
+      steps {
+        sh 'Compile the Code'
+      }
+    }
+
+    stage('Check the Code Quality') {
+      steps {
+        sh 'echo Check the code Quality'
+      }
+    }
+
+    stage('Test Cases') {
+      steps {
+        sh 'echo Test Cases'
+      }
+    }
+
+  }
+
 }
