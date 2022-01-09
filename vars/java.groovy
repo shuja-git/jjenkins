@@ -1,46 +1,28 @@
-//def call() {
-//  pipeline {
-//    agent {
-//      label "${BUILD_LABEL}"
-//    }
-//
-//    triggers {
-//      pollSCM('*/2 * * * *')
-//    }
-//
-//    stages {
-//
-//      stage('Compile the Code') {
-//        steps {
-//          sh 'mvn compile'
-//        }
-//      }
-//
-//      stage('Check the Code Quality') {
-//        steps {
-//          sh 'echo Check the code Quality'
-//        }
-//      }
-//
-//      stage('Lint Checks') {
-//        steps {
-//          sh 'echo Test Cases'
-//        }
-//      }
-//
-//      stage('Test Cases') {
-//        steps {
-//          sh 'echo Test Cases'
-//        }
-//      }
-//
-//    }
-//
-//    post {
-//      always {
-//        cleanWs()
-//      }
-//    }
-//
-//  }
-//}
+def call(){
+    pipeline {
+        agent {
+            label "${BUILD_LABEL}"
+        }
+        triggers {
+            pollSCM('*/2 * * * *')
+        }
+        stages {
+            stage('compile the code') {
+                steps{
+                    sh 'echo compile the ${COMPONENT} code'
+                }
+            }
+            stage('Check Code quality') {
+                steps{
+                    sh 'echo check Code Quality'
+                }
+            }
+            stage('Test case') {
+                steps{
+                    sh 'echo Test case'
+                }
+            }
+        }
+    }
+
+}
